@@ -3,38 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuki Healthcare - Get fit in one week</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>CHAINZ Luxury | Premium Men's Chains</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0d9488;
-            --primary-dark: #0f766e;
-            --secondary: #f0fdfa;
-            --text: #1f2937;
-            --light-gray: #f3f4f6;
+            --gold: #d4af37;
+            --gold-light: #f1d592;
+            --dark: #0a0a0a;
+            --dark-soft: #1a1a1a;
             --white: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --blur: blur(15px);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #f9fafb; color: var(--text); line-height: 1.5; padding-bottom: 80px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--dark); 
+            color: var(--white); 
+            font-family: 'Montserrat', sans-serif;
+            background-image: radial-gradient(circle at top right, #1a1a1a, #0a0a0a);
+            min-height: 100vh;
+        }
 
-        header { background: var(--white); padding: 1.5rem; text-align: center; border-bottom: 2px solid var(--secondary); position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow); }
-        header h1 { color: var(--primary); font-size: 1.8rem; }
-        header p { font-size: 0.9rem; color: #6b7280; font-weight: 600; }
+        /* Header & Logo */
+        header { 
+            padding: 2rem 1rem; 
+            text-align: center; 
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: var(--blur);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .logo { 
+            font-family: 'Cinzel', serif; 
+            font-size: 2.5rem; 
+            letter-spacing: 5px; 
+            color: var(--gold);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            margin-bottom: 0.5rem;
+        }
+        header p { font-size: 0.7rem; letter-spacing: 3px; color: var(--gold-light); text-transform: uppercase; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 1rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
 
-        .categories { display: flex; overflow-x: auto; gap: 0.5rem; padding: 1rem 0; scrollbar-width: none; }
-        .categories::-webkit-scrollbar { display: none; }
-        .cat-btn { background: var(--white); border: 1px solid var(--primary); color: var(--primary); padding: 0.5rem 1rem; border-radius: 20px; white-space: nowrap; cursor: pointer; font-size: 0.9rem; transition: 0.3s; }
-        .cat-btn.active { background: var(--primary); color: var(--white); }
+        /* Category Filter */
+        .categories { 
+            display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; overflow-x: auto; padding-bottom: 10px;
+        }
+        .cat-btn { 
+            background: var(--glass); 
+            border: 1px solid var(--glass-border); 
+            color: var(--white); 
+            padding: 0.7rem 1.5rem; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-size: 0.8rem;
+            transition: 0.4s;
+            backdrop-filter: var(--blur);
+        }
+        .cat-btn.active, .cat-btn:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); font-weight: 600; }
 
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
-        .product-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform 0.2s; border: 1px solid #eee; }
-        .product-card img { width: 100%; height: 180px; object-fit: contain; background: #fff; padding: 5px; }
-        .product-info { padding: 0.8rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .product-info h3 { font-size: 0.95rem; margin-bottom: 0.2rem; height: 2.4rem; overflow: hidden; }
+        /* Product Grid */
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+            gap: 2rem; 
+        }
+        .product-card { 
+            background: var(--glass); 
+            border: 1px solid var(--glass-border); 
+            border-radius: 20px; 
+            overflow: hidden; 
+            transition: 0.4s;
+            backdrop-filter: var(--blur);
+            display: flex; flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .product-card img { width: 100%; height: 250px; object-fit: cover; filter: brightness(0.9); transition: 0.4s; }
+        .product-card:hover img { filter: brightness(1.1); }
+        
+        .product-info { padding: 1.5rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-info h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--gold-light); }
+        .product-info .price { font-size: 1.2rem; font-weight: 600; color: var(--white); margin-bottom: 1rem; margin-top: auto; }
+        
+        .add-btn { 
+            background: transparent; 
+            border: 1px solid var(--gold); 
+            color: var(--gold); 
+            padding: 0.8rem; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-weight: 600; 
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+        .add-btn:hover { background: var(--gold); color: var(--dark); }
+
+        /* Cart Floating Action Button */
+        #cart-fab { 
+            position: fixed; bottom: 30px; right: 30px; 
+            background: var(--gold); color: var(--dark); 
+            width: 65px; height: 65px; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); 
+            cursor: pointer; z-index: 1000; transition: 0.3s;
+        }
+        #cart-count { 
+            position: absolute; top: 0; right: 0; 
+            background: var(--white); color: var(--dark); 
+            font-size: 0.75rem; padding: 4px 8px; border-radius: 50%; font-weight: bold;
+        }
+
+        /* Modal & Blur */
+        .modal { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+            display: none; z-index: 2000; justify-content: center; align-items: center;
+        }
+        .modal-content { 
+            background: var(--dark-soft); 
+            width: 90%; max-width: 500px; max-height: 80vh;
+            border-radius: 30px; border: 1px solid var(--glass-border);
+            display: flex; flex-direction: column; padding: 2rem; position: relative;
+        }
+
+        .cart-item { display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem; }
+        .cart-item img { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; }
+        
+        .qty-btn { background: var(--glass); border: 1px solid var(--glass-border); color: white; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; }
+
+        input, textarea { 
+            width: 100%; padding: 1rem; margin-bottom: 1rem; 
+            background: var(--glass); border: 1px solid var(--glass-border); 
+            border-radius: 15px; color: white; font-family: inherit;
+        }
+        input:focus { border-color: var(--gold); outline: none; }
+
+        .checkout-btn { 
+            background: var(--gold); color: var(--dark); 
+            width: 100%; padding: 1.2rem; border-radius: 50px; 
+            border: none; font-weight: 700; cursor: pointer; text-transform: uppercase;
+        }
+
+        .wa-float { 
+            position: fixed; bottom: 30px; left: 30px; 
+            background: #25d366; color: white; padding: 15px 25px; 
+            border-radius: 50px; text-decoration: none; font-weight: 600; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3); z-index: 1000;
+        }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">CHAINZ</div>
+    <p>Ultimate Luxury Men's Collection</p>
+</header>
+
+<div class="container">
+    <div class="categories">
+        <button class="cat-btn active" onclick="filterProducts('All')">All Collection</button>
+        <button class="cat-btn" onclick="filterProducts('Cuban')">Cuban</button>
+        <button class="cat-btn" onclick="filterProducts('Rope')">Rope</button>
+        <button class="cat-btn" onclick="filterProducts('Premium')">Premium</button>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+        </div>
+</div>
+
+<div id="cart-fab" onclick="toggleCart()">
+    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+    <span id="cart-count">0</span>
+</div>
+
+<a href="https://wa.me/923127369255" class="wa-float" target="_blank">WhatsApp Chat</a>
+
+<div class="modal" id="cart-modal">
+    <div class="modal-content" id="cart-view">
+        <h2 style="font-family:'Cinzel'; color:var(--gold); margin-bottom:1.5rem;">Your Selection</h2>
+        <div class="cart-items" id="cart-items-list" style="overflow-y:auto; flex-grow:1;"></div>
+        <div style="margin-top:1.5rem;">
+            <div style="display:flex; justify-content:space-between; font-size:1.2rem; margin-bottom:1.5rem;">
+                <span>Total</span>
+                <span id="grand-total" style="color:var(--gold); font-weight:bold;">PKR 0</span>
+            </div>
+            <button class="checkout-btn" onclick="showCheckout()">Proceed to Details</button>
+            <button onclick="toggleCart()" style="width:100%; background:none; color:#777; border:none; margin-top:10px; cursor:pointer;">Close</button>
+        </div>
+    </div>
+
+    <div class="modal-content" id="checkout-view" style="display:none;">
+        <h2 style="font-family:'Cinzel'; color:var(--gold); margin-bottom:1.5rem;">Delivery Details</h2>
+        <form id="order-form" action="https://formspree.io/f/xgonqnlg" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="tel" name="phone" placeholder="WhatsApp Number" required>
+            <textarea name="address" rows="3" placeholder="Shipping Address" required></textarea>
+            
+            <input type="hidden" name="Order_Summary" id="hidden-summary">
+            <input type="hidden" name="_subject" value="New Luxury Order - CHAINZ">
+
+            <button type="submit" class="checkout-btn">Confirm Order</button>
+            <button type="button" onclick="showCart()" style="width:100%; background:none; color:#777; border:none; margin-top:10px; cursor:pointer;">Back to Cart</button>
+        </form>
+    </div>
+
+    <div class="modal-content" id="success-view" style="display:none; text-align:center;">
+        <div style="font-size:4rem; color:var(--gold);">⚜️</div>
+        <h2 style="font-family:'Cinzel'; color:var(--gold); margin:1rem 0;">Order Reserved</h2>
+        <p style="color:#aaa; margin-bottom:2rem;">Our representative will contact you shortly via WhatsApp for confirmation.</p>
+        <button class="checkout-btn" onclick="window.location.reload()">Back to Shop</button>
+    </div>
+</div>
+
+<script>
+    // Note: I used the provided image links. Since imgbb links sometimes need direct paths,
+    // I am using your IDs with a standard direct link format.
+    const products = [
+        { id: 1, name: "Gold Cuban Link", price: 4500, cat: "Cuban", img: "https://i.ibb.co/ychfJ5H3/p1.jpg", desc: "18K Gold Plated Luxury" },
+        { id: 2, name: "Silver Rope Chain", price: 3800, cat: "Rope", img: "https://i.ibb.co/SwmcZ7zQ/p2.jpg", desc: "Classic Italian Design" },
+        { id: 3, name: "Iced Out Executive", price: 8500, cat: "Premium", img: "https://i.ibb.co/7x4ZMSNs/p3.jpg", desc: "Hand-set VVS Simulants" },
+        { id: 4, name: "The Midnight Chain", price: 5200, cat: "Premium", img: "https://i.ibb.co/4RG0xsP6/p4.jpg", desc: "Black Obsidian Finish" },
+        { id: 5, name: "Royal Figaroo", price: 4200, cat: "Cuban", img: "https://i.ibb.co/ZRtkQwNJ/p5.jpg", desc: "Timeless Sophistication" },
+        { id: 6, name: "Diamond Cut Rope", price: 3900, cat: "Rope", img: "https://i.ibb.co/SwmcZ7zQ/p2.jpg", desc: "Shines in every light" }
+    ];
+
+    let cart = JSON.parse(localStorage.getItem('chainz_cart')) || [];
+
+    function renderProducts(filter = 'All') {
+        const grid = document.getElementById('product-grid');
+        grid.innerHTML = '';
+        const filtered = filter === 'All' ? products : products.filter(p => p.cat === filter);
+        
+        filtered.forEach(p => {
+            grid.innerHTML += `
+                <div class="product-card">
+                    <img src="${p.img}" alt="${p.name}" loading="lazy">
+                    <div class="product-info">
+                        <h3>${p.name}</h3>
+                        <p style="font-size:0.7rem; color:#888; margin-bottom:10px;">${p.desc}</p>
+                        <p class="price">PKR ${p.price.toLocaleString()}</p>
+                        <button class="add-btn" onclick="addToCart(${p.id})">Add to Bag</button>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    function filterProducts(cat) {
+        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        renderProducts(cat);
+    }
+
+    function addToCart(id) {
+        const p = products.find(i => i.id === id);
+        const exists = cart.find(i => i.id === id);
+        if(exists) exists.qty++;
+        else cart.push({...p, qty: 1});
+        updateCart();
+    }
+
+    function updateCart() {
+        localStorage.setItem('chainz_cart', JSON.stringify(cart));
+        document.getElementById('cart-count').innerText = cart.reduce((s, i) => s + i.qty, 0);
+        renderCartItems();
+    }
+
+    function renderCartItems() {
+        const list = document.getElementById('cart-items-list');
+        const totalEl = document.getElementById('grand-total');
+        list.innerHTML = '';
+        let total = 0;
+
+        cart.forEach(item => {
+            total += item.price * item.qty;
+            list.innerHTML += `
+                <div class="cart-item">
+                    <img src="${item.img}">
+                    <div style="flex-grow:1">
+                        <h4 style="font-size:0.9rem;">${item.name}</h4>
+                        <div style="display:flex; align-items:center; gap:10px; margin-top:5px;">
+                            <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
+                            <span>${item.qty}</span>
+                            <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                    <p style="color:var(--gold)">PKR ${(item.price * item.qty).toLocaleString()}</p>
+                </div>
+            `;
+        });
+        totalEl.innerText = 'PKR ' + total.toLocaleString();
+    }
+
+    function changeQty(id, delta) {
+        const item = cart.find(i => i.id === id);
+        item.qty += delta;
+        if(item.qty < 1) cart = cart.filter(i => i.id !== id);
+        updateCart();
+    }
+
+    function toggleCart() {
+        const modal = document.getElementById('cart-modal');
+        modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function showCheckout() {
+        if(cart.length === 0) return alert("Bag is empty");
+        document.getElementById('cart-view').style.display = 'none';
+        document.getElementById('checkout-view').style.display = 'block';
+        
+        let summary = "LUXURY ORDER:\n";
+        cart.forEach(i => summary += `- ${i.name} (x${i.qty}): PKR ${i.price * i.qty}\n`);
+        summary += `TOTAL: PKR ${cart.reduce((s, i) => s + (i.price * i.qty), 0)}`;
+        document.getElementById('hidden-summary').value = summary;
+    }
+
+    function showCart() {
+        document.getElementById('cart-view').style.display = 'block';
+        document.getElementById('checkout-view').style.display = 'none';
+    }
+
+    document.getElementById('order-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const response = await fetch(e.target.action, {
+            method: 'POST',
+            body: new FormData(e.target),
+            headers: { 'Accept': 'application/json' }
+        });
+        if(response.ok) {
+            cart = []; updateCart();
+            document.getElementById('checkout-view').style.display = 'none';
+            document.getElementById('success-view').style.display = 'block';
+        }
+    };
+
+    renderProducts();
+    updateCart();
+</script>
+</body>
+</html>        .product-info h3 { font-size: 0.95rem; margin-bottom: 0.2rem; height: 2.4rem; overflow: hidden; }
         .product-info .desc { font-size: 0.75rem; color: #6b7280; margin-bottom: 0.5rem; }
         .product-info .price { font-weight: 700; color: var(--primary); font-size: 1.1rem; margin-top: auto; }
         .add-btn { background: var(--primary); color: var(--white); border: none; padding: 0.6rem; border-radius: 8px; margin-top: 0.8rem; cursor: pointer; font-weight: 600; width: 100%; }
